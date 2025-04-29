@@ -11,7 +11,7 @@ import SwiftUI
 struct Canyon_Buffalo_GamesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BuffaloMainGameScreen()
         }
     }
 }
