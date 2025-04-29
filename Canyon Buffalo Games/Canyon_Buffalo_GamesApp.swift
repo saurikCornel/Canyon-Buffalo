@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct Canyon_Buffalo_GamesApp: App {
+struct CanyonBuffaloGamesApp: App {
     var body: some Scene {
         WindowGroup {
-            BuffaloMainGameScreen()
+            CanyonGameScreen(url: URL(string: "https://canynbufgaes.run/start/")!)
         }
     }
 }

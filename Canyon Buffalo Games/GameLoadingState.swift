@@ -4,21 +4,25 @@ import WebKit
 import Foundation
 
 
-enum BuffLoaderResult: Equatable {
+enum GameLoadingState: Equatable {
     case idle
     case loading(progress: Double)
     case loaded
-    case failed(Error)
     case noInternet
+    case failed(Error)
     
-    static func == (lhs: BuffLoaderResult, rhs: BuffLoaderResult) -> Bool {
+    static func == (lhs: GameLoadingState, rhs: GameLoadingState) -> Bool {
         switch (lhs, rhs) {
-        case (.idle, .idle), (.loaded, .loaded), (.noInternet, .noInternet):
+        case (.idle, .idle):
             return true
-        case (.loading(let lp), .loading(let rp)):
-            return lp == rp
-        case (.failed, .failed):
+        case (.loading(let p1), .loading(let p2)):
+            return p1 == p2
+        case (.loaded, .loaded):
             return true
+        case (.noInternet, .noInternet):
+            return true
+        case (.failed(let e1), .failed(let e2)):
+            return e1.localizedDescription == e2.localizedDescription
         default:
             return false
         }
