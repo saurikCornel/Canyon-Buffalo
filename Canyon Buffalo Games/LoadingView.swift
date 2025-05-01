@@ -108,7 +108,7 @@ struct GameLoadingView: View {
                 Image("buffalo_img")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: min(geometry.size.width * 0.5, 200))
+                    .frame(width: min(geometry.size.width * 0.7, 400))
                 
                 Spacer()
                 
@@ -143,7 +143,7 @@ struct GameLoadingView: View {
                     // Progress bar
                     CustomProgressBar(progress: progress)
                         .frame(height: 8)
-                        .frame(width: min(geometry.size.width * 0.4, 280))
+                        .frame(width: min(geometry.size.width * 0.7, 390))
                 }
             }
             .padding(.horizontal, 40)
